@@ -1,8 +1,8 @@
-import { useRouter } from "next/router";
+import { withRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function signUp() {
-  const router = useRouter();
+  const router = withRouter();
 
   return (
     <div>
