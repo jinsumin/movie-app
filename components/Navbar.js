@@ -15,10 +15,16 @@ export default function Navbar() {
       </div>
       <ul>
         <li>
-          <a href="">Home</a>
+          <Link href="/">
+            <a className={router.pathname === "/" ? "active" : ""}>Home</a>
+          </Link>
         </li>
         <li>
-          <a href="">Photo</a>
+          <Link href="/about">
+            <a className={router.pathname === "/about" ? "active" : ""}>
+              About
+            </a>
+          </Link>
         </li>
         <li>
           <a href="">Schedule</a>
@@ -69,9 +75,6 @@ export default function Navbar() {
           font-weight: 600;
           font-size: 18px;
         }
-        .active {
-          color: tomato;
-        }
         nav ul {
           display: flex;
           list-style: none;
@@ -79,6 +82,9 @@ export default function Navbar() {
         }
         nav ul li {
           padding: 8px 12px;
+        }
+        .active {
+          color: tomato;
         }
       `}</style>
     </nav>
