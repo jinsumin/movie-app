@@ -1593,6 +1593,11 @@
     "has-symbols" "^1.0.3"
     "which-boxed-primitive" "^1.0.2"
 
+"updates@^13.0.5":
+  "integrity" "sha512-ut7RIiH5Qys7jan4cS9i1Lqk6AAKGmVy1q0udDNJ4YXhvVoUdwQTAk5I9/wkSH6nHQtqhaqytCcZvS6hEJs8xg=="
+  "resolved" "https://registry.npmjs.org/updates/-/updates-13.0.5.tgz"
+  "version" "13.0.5"
+
 "uri-js@^4.2.2":
   "integrity" "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="
   "resolved" "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz"
