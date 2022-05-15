@@ -2,8 +2,6 @@
 
 <img width="1440" alt="screenshot02" src="https://user-images.githubusercontent.com/21328122/168487133-fbbe4556-fd20-41dc-ada4-49d3c37db9b1.png">
 
-
-
 ## Getting Started
 
 ```bash
