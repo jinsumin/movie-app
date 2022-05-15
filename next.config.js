@@ -1,4 +1,4 @@
-const API_KEY = process.env.API_KEY;
+const API_KEY = "25bd72df962ed94d3e026d32caf241fa";
 
 module.exports = {
   reactStrictMode: true,

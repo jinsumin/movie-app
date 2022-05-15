@@ -1,33 +1,19 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import Seo from "../components/Seo";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export default function Home({ results }) {
   const router = useRouter();
   const onClick = (id, title) => {
     router.push(`/movies/${title}/${id}`);
   };
 
-  const [movies, setMovies] = useState([]);
-  useEffect(() => {
-    (async () => {
-      const {results} = await (
-        await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
-        )
-      ).json();
-      setMovies(results);
-    })();
-  }, []);
-
   return (
     <div className={styles.container}>
       <Seo title="Home" />
-      {!movies && <h4>Loading...</h4>}
-      {movies?.map((movie) => (
+      {/* {!movies && <h4>Loading...</h4>} */}
+      {results?.map((movie) => (
         <div
           onClick={() => onClick(movie.id, movie.original_title)}
           className="movie"
@@ -41,7 +27,18 @@ export default function Home() {
           </h4>
         </div>
       ))}
-    
+      {/* <footer className={styles.footer}>
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{" "}
+          <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span>
+        </a>
+      </footer> */}
       <style jsx>{`
         .container {
           display: grid;
@@ -66,18 +63,17 @@ export default function Home() {
           text-align: center;
         }
       `}</style>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const { results } = await (
+    await fetch(`http://localhost:3000/api/movies`)
+  ).json();
+  return {
+    props: {
+      results,
+    },
+  };
 }
