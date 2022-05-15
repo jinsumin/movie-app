@@ -1,3 +1,9 @@
-export default function about() {
-    return "about";
+import Seo from "../components/Seo";
+
+export default function About() {
+  return (
+    <div>
+      <Seo title="About" />
+    </div>
+  );
 }
