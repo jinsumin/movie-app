@@ -22,7 +22,6 @@ export default function Home() {
         )
       ).json();
       setMovies(results);
-      console.log(results);
     })();
   }, []);
 
