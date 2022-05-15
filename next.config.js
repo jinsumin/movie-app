@@ -6,7 +6,7 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: "old-blog/:path*",
+        source: "/old-blog/:path*",
         destination: "/new-blog/:path*",
         permanent: false,
       },
@@ -20,7 +20,7 @@ module.exports = {
         destination: `https://api.themoviedb.org/3/movie/popular?api_key${API_KEY}`,
       },
       {
-        source: "api/movies/:id",
+        source: "/api/movies/:id",
         destination: `https://api.themoviedb.org/3/movie/:id?api_key=${API_KEY}`,
       },
     ];

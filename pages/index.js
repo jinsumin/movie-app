@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import Seo from "../components/Seo";
 import styles from "../styles/Home.module.css";
 
-const API_KEY = "25bd72df962ed94d3e026d32caf241fa";
-
 export default function Home() {
   const router = useRouter();
   const onClick = (id, title) => {
@@ -43,18 +41,7 @@ export default function Home() {
           </h4>
         </div>
       ))}
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+    
       <style jsx>{`
         .container {
           display: grid;
@@ -79,6 +66,18 @@ export default function Home() {
           text-align: center;
         }
       `}</style>
+      <footer className={styles.footer}>
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{" "}
+          <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span>
+        </a>
+      </footer>
     </div>
   );
 }
