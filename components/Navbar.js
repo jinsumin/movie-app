@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   const router = useRouter();
-
+  
   return (
     <nav>
       <div>
@@ -40,14 +40,14 @@ export default function Navbar() {
         <li>
           <Link href="/signIn">
             <a className={router.pathname === "/signIn" ? "active" : ""}>
-              SignIn
+              Sign In
             </a>
           </Link>
         </li>
         <li>
           <Link href="/signUp">
             <a className={router.pathname === "/signUp" ? "active" : ""}>
-              SignUp
+              Sign Up
             </a>
           </Link>
         </li>
