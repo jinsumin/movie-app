@@ -1,10 +1,10 @@
 import Navbar from "./Navbar";
 
-export default function Layout({ lowComponent }) {
+export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <div>{lowComponent}</div>
+      <div>{children}</div>
     </>
   );
 }

@@ -10,9 +10,8 @@ export default function Home({ results }) {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Seo title="Home" />
-      {/* {!movies && <h4>Loading...</h4>} */}
       {results?.map((movie) => (
         <div
           onClick={() => onClick(movie.id, movie.original_title)}
@@ -27,21 +26,10 @@ export default function Home({ results }) {
           </h4>
         </div>
       ))}
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer> */}
       <style jsx>{`
         .container {
           display: grid;
+          place-content: center;
           grid-template-columns; 1fr 1fr;
           padding: 20px;
           gap: 20px;
@@ -50,19 +38,27 @@ export default function Home({ results }) {
           cursor: pointer;
         }
         .movie img {
-          max-width: 100%;
           border-radius: 12px;
+          max-width: 100%;
           transition: transform 0.2s ease-in-out;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          text-align: center;
+          align-items: center;
         }
         .movie:hover img {
           transform: scale(1.05) translateY(-10px);
+          text-align: center;
         }
         .movie h4 {
           fonr-size: 18px;
           text-align: center;
         }
       `}</style>
+      <footer className={styles.footer}>
+        <div>
+          Created by Soomin Jin
+        </div>
+      </footer>
     </div>
   );
 }
@@ -71,6 +67,7 @@ export async function getServerSideProps() {
   const { results } = await (
     await fetch(`http://localhost:3000/api/movies`)
   ).json();
+  console.log(results);
   return {
     props: {
       results,

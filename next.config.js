@@ -1,4 +1,4 @@
-const API_KEY = "25bd72df962ed94d3e026d32caf241fa";
+const API_KEY = process.env.API_KEY;
 
 module.exports = {
   reactStrictMode: true,
@@ -17,7 +17,7 @@ module.exports = {
     return [
       {
         source: "/api/movies",
-        destination: `https://api.themoviedb.org/3/movie/popular?api_key${API_KEY}`,
+        destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
       },
       {
         source: "/api/movies/:id",
