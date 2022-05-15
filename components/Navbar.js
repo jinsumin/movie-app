@@ -86,6 +86,22 @@ export default function Navbar() {
         .active {
           color: tomato;
         }
+        @media screen and (max-width: 770px) {
+          .navbar {
+            flex-direction: column;
+            padding: 8px 24px;
+          }
+          .navbar div {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+          }
+          .navbar div li {
+            width: 100%;
+            text-align: center;
+          }
+        }
       `}</style>
     </nav>
   );
