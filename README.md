@@ -1,3 +1,6 @@
+<img src="/public/screenshot01.png>
+<img src="/public/screenshot02.png>
+
 ## Getting Started
 
 ```bash
