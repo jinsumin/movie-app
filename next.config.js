@@ -1,6 +1,11 @@
 const API_KEY = "25bd72df962ed94d3e026d32caf241fa";
 
 module.exports = {
+  assetPrefix:
+    process.env.NODE_ENV === "production"
+      ? "https://jinsumin.github.io/movie-app"
+      : "",
+
   reactStrictMode: true,
 
   async redirects() {

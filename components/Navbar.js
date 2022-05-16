@@ -1,15 +1,18 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useContext } from "react";
+import PortfolioContext from "../context/context";
 
 export default function Navbar() {
+  const { prefix } = useContext(PortfolioContext);
   const router = useRouter();
-  
+
   return (
     <nav>
       <div>
         <Link href="/">
           <a className={router.pathname === "/" ? "active" : ""}>
-            <img src="/netflix.jpeg" />
+            <img src={`${prefix}/netflix.jpeg`} />
           </a>
         </Link>
       </div>
